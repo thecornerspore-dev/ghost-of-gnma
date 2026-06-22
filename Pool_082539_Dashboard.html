@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ginnie Mae Pool 082539 — Schatz Note Dashboard</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<style>
+  :root{--navy:#1F3864;--gold:#B8860B;--ink:#1a1a1a;--line:#d8dce5;--bg:#f6f7f9;--red:#9b2226;}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.5 "Century Schoolbook",Georgia,"Times New Roman",serif;}
+  .wrap{max-width:1080px;margin:0 auto;padding:28px 22px 60px;}
+  header{border-bottom:3px solid var(--gold);padding-bottom:14px;margin-bottom:8px;}
+  h1{font-size:26px;color:var(--navy);margin:0 0 2px;letter-spacing:.2px;}
+  .sub{font-style:italic;color:var(--gold);font-size:14px;}
+  .maxim{font-style:italic;color:var(--navy);font-size:12px;opacity:.8;margin-top:2px;}
+  h2{color:var(--navy);font-size:18px;margin:34px 0 10px;border-left:5px solid var(--gold);padding-left:10px;}
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin:14px 0;}
+  .card{background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px 16px;}
+  .card .k{font-size:12px;text-transform:uppercase;letter-spacing:.5px;color:#667;}
+  .card .v{font-size:20px;font-weight:700;color:var(--navy);margin-top:3px;}
+  .card .n{font-size:12px;color:#556;margin-top:3px;}
+  .chartbox{background:#fff;border:1px solid var(--line);border-radius:8px;padding:16px 18px 10px;margin:14px 0;}
+  .chartbox h3{margin:0 0 4px;color:var(--navy);font-size:16px;}
+  .chartbox p{margin:0 0 10px;font-size:13px;color:#556;}
+  canvas{max-height:340px;}
+  table{border-collapse:collapse;width:100%;font-size:13.5px;background:#fff;border:1px solid var(--line);}
+  th,td{border:1px solid var(--line);padding:7px 9px;text-align:left;}
+  th{background:var(--navy);color:#fff;font-weight:600;}
+  td.match{color:#13632a;font-weight:700;}
+  .flag{background:#fff8e6;border:1px solid var(--gold);border-radius:8px;padding:14px 16px;margin:16px 0;}
+  .flag b{color:var(--navy);}
+  .anchor{background:#eef3fb;border:1px solid var(--navy);border-radius:8px;padding:14px 16px;margin:16px 0;}
+  footer{margin-top:34px;font-size:12px;color:#778;border-top:1px solid var(--line);padding-top:12px;}
+  .pill{display:inline-block;background:var(--navy);color:#fff;border-radius:20px;padding:2px 10px;font-size:12px;margin-right:6px;}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>Ginnie Mae Pool 082539 — The Schatz Note</h1>
+    <div class="sub">CUSIP 36225EZD7 · Ginnie Mae II · Pool Type AF (FHA Adjustable-Rate) · Issued 05/01/2010</div>
+    <div class="maxim">Case No. C-03-CV-24-003218 · Built from Ginnie Mae's official pool disclosure, loan-level data, and loan-level removal file</div>
+  </header>
+
+  <div class="anchor" style="background:#eafaef;border:2px solid #2a7d4f;">
+    <span class="pill" style="background:#2a7d4f;">REMOVAL — CONFIRMED OF RECORD</span>
+    Ginnie Mae's official <b>loan-level removal file</b> for Pool 082539 lists the Schatz Note —
+    sequence <b>1013782744</b>, Wells Fargo issuer <b>3355</b>, original balance <b>$254,000</b> — removed in
+    <b>December 2019</b> (reporting period 201912), unpaid balance <b>$186,397.89</b>, removal reason code
+    <b>2 = "Purchase of a Delinquent Loan."</b> Wells Fargo, as issuer, bought the <i>delinquent</i> note
+    out of the Ginnie Mae security. That exact figure ($186,397.89) is the only December-2019 "Purchase of
+    Delinquent Loan" entry in the pool's removal history — three independent Ginnie records converge on this
+    one loan.
+  </div>
+
+  <div class="grid">
+    <div class="card"><div class="k">Original Pool Balance</div><div class="v">$65,169,454</div><div class="n">at issuance, 05/2010</div></div>
+    <div class="card"><div class="k">Current Balance</div><div class="v">$1,485,723</div><div class="n">factor 0.02279784 · 05/2026</div></div>
+    <div class="card"><div class="k">Loans Remaining</div><div class="v">13</div><div class="n">of hundreds originally — none in MD</div></div>
+    <div class="card"><div class="k">Pool Type</div><div class="v">G2-Multi AF</div><div class="n">FHA 1-yr ARM · CMT · 30-day lookback</div></div>
+    <div class="card" style="border-color:#2a7d4f;"><div class="k">Schatz Note Removed</div><div class="v" style="color:#2a7d4f;">Dec 2019</div><div class="n">reason 2 · Purchase of Delinquent Loan · UPB $186,397.89</div></div>
+  </div>
+
+  <div class="anchor">
+    <span class="pill">SCHATZ ANCHOR</span>
+    The Schatz Note is <b>loan sequence 1013782744</b> (Wells Fargo issuer 3355), confirmed in this pool's
+    <b>October 2013</b> loan-level record at unpaid balance <b>$230,478.84</b> — the exact figure on Mr. Schatz's
+    Wells Fargo servicing ledger for that period. The note is an <b>FHA 4.25% adjustable-rate</b> loan, originally
+    $254,000, Maryland. It was present in the pool in October 2013 and was <b>removed in December 2019</b>
+    as a delinquent-loan buyout (see the green banner above); it is absent from the current 13-loan pool.
+  </div>
+
+  <h2>1 · Pool Balance Run-Off (2010 → 2026)</h2>
+  <div class="chartbox">
+    <h3>From $65.2 million to $1.49 million</h3>
+    <p>The security amortized and shed loans over sixteen years. Logarithmic scale to show the full decline.</p>
+    <canvas id="balChart"></canvas>
+  </div>
+
+  <h2>2 · The ARM Rate History — Proof of the Adjustable Note</h2>
+  <div class="chartbox">
+    <h3>Security interest rate stepped off 4.25% at the July-2015 first adjustment</h3>
+    <p>The pool's pass-through rate held at <b>4.250%</b> from issuance through mid-2015, then adjusted each year on the
+      CMT index — <b>exactly the mechanics of Mr. Schatz's note</b> (1-yr CMT + margin, first change 7/1/2015, ±1%/yr,
+      ±5% lifetime). This is the fingerprint of an adjustable-rate loan, not the 5% fixed loan the prior (mistaken)
+      pool identification implied.</p>
+    <canvas id="rateChart"></canvas>
+  </div>
+
+  <h2>3 · Loan Removals by Year and Reason</h2>
+  <div class="chartbox">
+    <h3>Mortgagor Payoff vs. Purchase of Delinquent Loan (EBO) vs. Loss Mitigation</h3>
+    <p>Ginnie's official removal history (pool-level counts). The <b>"Purchase of Delinquent Loan"</b> bars are
+      issuer <i>early buyouts</i> (EBO) of delinquent loans — the same buyout mechanism reflected in Wells Fargo's
+      internal "NMIBUYOUTS" records. <b>The Schatz note is the single December-2019 "Purchase of Delinquent Loan"
+      removal — UPB $186,397.89</b> (the red bar over 2019).</p>
+    <canvas id="remChart"></canvas>
+  </div>
+
+  <h2>4 · Note Terms vs. Pool Terms (CMT ARM Match)</h2>
+  <table>
+    <tr><th>Term</th><th>Schatz Note</th><th>Pool 082539 (official)</th><th>Match</th></tr>
+    <tr><td>Program</td><td>FHA</td><td>FHA (100% of pool)</td><td class="match">✓</td></tr>
+    <tr><td>Product</td><td>1-yr Adjustable (ARM)</td><td>Type AF — FHA ARM</td><td class="match">✓</td></tr>
+    <tr><td>Index</td><td>CMT (Constant Maturity Treasury)</td><td>CMT</td><td class="match">✓</td></tr>
+    <tr><td>Look-back</td><td>30 days</td><td>30 Day</td><td class="match">✓</td></tr>
+    <tr><td>First rate change</td><td>7/1/2015</td><td>Security rate first dropped 07/2015</td><td class="match">✓</td></tr>
+    <tr><td>Caps (init/annual/life)</td><td>1% / 1% / 5%</td><td>1 / 1 / 5</td><td class="match">✓</td></tr>
+    <tr><td>Issue date</td><td>Note 4/13/2010</td><td>Pool issued 5/1/2010</td><td class="match">✓</td></tr>
+    <tr><td>Issuer at origination</td><td>Wells Fargo (3355)</td><td>WF issued into pool; later Nationstar/Freedom</td><td class="match">✓</td></tr>
+  </table>
+
+  <div class="flag">
+    <b>Why this matters.</b> Ginnie Mae's own records establish, of record, that the Schatz Note was
+    <b>Ginnie Mae II securitized collateral</b> (Pool 082539, an FHA CMT ARM), placed there by Wells Fargo as issuer,
+    and that Wells Fargo <b>repurchased it as a delinquent loan in December 2019</b> (reason code 2). After that
+    early buyout the note left Pool 082539 and did not return to it; by September 2022 the physical note was in
+    Deutsche Bank's custody, where it remained when foreclosure was commenced in 2024. (Whether it sat in Wells
+    Fargo's private book or was <i>re-pooled</i> into a re-performing Ginnie security in the interim — which would
+    reconcile Wells Fargo's internal ~2021 "NMIBUYOUTS" date with Ginnie's official Dec-2019 removal — is an open,
+    testable question.) Reason code 2 is a buyout of a
+    <i>delinquent</i> loan; it makes the security's investors whole and does <b>not</b> discharge the borrower's debt —
+    we do not argue the loan was "paid off." Where the record references a pool, it now reads
+    <b>Pool 082539 / sequence 1013782744 / removed 12/2019 / reason 2 (Purchase of Delinquent Loan) / UPB $186,397.89</b>,
+    on the authority of Ginnie Mae's official loan-level removal file.
+  </div>
+
+  <footer>
+    Sources: ginniemae.gov Pool/CUSIP disclosure for 082539 (Summary, Composition, ARM Detail, Removal History,
+    Historical Data; as-of 05/2026) and Ginnie II loan-level disclosure file llmon2_201310. Removal counts are
+    pool-level. Prepared for Jeffrey M. Schatz, Defendant <i>in propria persona</i>, Case No. C-03-CV-24-003218,
+    Circuit Court for Baltimore County, Maryland. Not legal advice; figures transcribed from the official disclosure.
+  </footer>
+</div>
+
+<script>
+const navy="#1F3864", gold="#B8860B", red="#9b2226", green="#2a7d4f";
+Chart.defaults.font.family='Georgia, "Times New Roman", serif';
+Chart.defaults.color='#33384a';
+
+// ---- 1. Balance run-off (Dec each year; issuance + current) ----
+const balLabels=['2010 · issue','2012','2013','2014','2015','2016','2017','2018','2019','2020','2021','2022','2023','2024','2025','2026·May'];
+const balVals=[65169454,39955657,30344060,23312142,18720986,15126972,11927221,8534861,7036221,3898126,2892632,2033296,1800525,1646497,1514490,1485723];
+new Chart(document.getElementById('balChart'),{type:'line',
+  data:{labels:balLabels,datasets:[{label:'Pool security balance ($)',data:balVals,borderColor:navy,backgroundColor:'rgba(31,56,100,.10)',fill:true,tension:.25,pointRadius:3,pointBackgroundColor:navy}]},
+  options:{plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>'$'+c.parsed.y.toLocaleString()}}},
+    scales:{y:{type:'logarithmic',title:{display:true,text:'Balance (log $)'},ticks:{callback:v=>'$'+Number(v).toLocaleString()}}}}});
+
+// ---- 2. ARM rate (annual, post-July reset) ----
+const rateLabels=['2012','2013','2014','2015','2016','2017','2018','2019','2020','2021','2022','2023','2024','2025','2026'];
+const rateVals=[4.250,4.250,4.250,3.250,2.600,3.040,4.030,4.330,3.320,2.340,3.310,4.330,5.330,6.090,6.100];
+new Chart(document.getElementById('rateChart'),{type:'line',
+  data:{labels:rateLabels,datasets:[{label:'Security interest rate (%)',data:rateVals,borderColor:gold,backgroundColor:'rgba(184,134,11,.12)',fill:true,stepped:false,tension:.15,pointRadius:4,pointBackgroundColor:gold}]},
+  options:{plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>c.parsed.y.toFixed(3)+'%'}}},
+    scales:{y:{title:{display:true,text:'Rate (%)'},suggestedMin:2,suggestedMax:6.5,ticks:{callback:v=>v+'%'}}}}});
+
+// ---- 3. Removals by year & reason (stacked) ----
+const remYears=['2012*','2013','2014','2015','2016','2017','2018','2019','2020','2021','2022','2023','2024','2025'];
+const payoff=[21,31,21,17,13,11,12,4,9,6,6,1,1,1];
+const dq=[15,7,9,1,0,1,2,3,7,0,0,0,0,0];
+const lm=[0,0,1,0,2,2,2,1,0,0,0,0,0,0];
+new Chart(document.getElementById('remChart'),{type:'bar',
+  data:{labels:remYears,datasets:[
+    {label:'Mortgagor Payoff',data:payoff,backgroundColor:navy},
+    {label:'Purchase of Delinquent Loan (EBO)',data:dq,backgroundColor:red},
+    {label:'Loss Mitigation',data:lm,backgroundColor:green}]},
+  options:{plugins:{legend:{position:'bottom'},title:{display:false},
+    tooltip:{callbacks:{footer:i=>'* 2012 partial (Feb–Dec)'}}},
+    scales:{x:{stacked:true},y:{stacked:true,title:{display:true,text:'Loans removed'}}}}});
+</script>
+</body>
+</html>
